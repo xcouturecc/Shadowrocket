@@ -24,6 +24,8 @@ https://raw.githubusercontent.com/coutureone/Shadowrocket/master/Modules/sukka_a
 
 - Apple Push Notification Service：`DIRECT`
 - Surge 系统流量：`DIRECT`
+- macOS：额外启用 SukkaW 原生广告 / 隐私 Reject 规则
+- iOS：自动忽略大型广告规则，保持移动端轻量与兼容性
 - Common CDN：`PROXY`（与 `global.conf` 使用相同策略）
 - Apple 中国大陆 CDN：`DIRECT`
 - Apple / Microsoft / 网易云 / 局域网 / 中国大陆常见服务：`DIRECT`
@@ -35,6 +37,28 @@ https://raw.githubusercontent.com/coutureone/Shadowrocket/master/Modules/sukka_a
 - 未匹配流量：`FINAL,PROXY,dns-failed`
 
 配置不包含节点。请把自建节点或订阅节点加入 `[Proxy]`，并加入 `PROXY` 策略组。若以后希望 AI、Telegram 或 Streaming 使用不同落地节点，可直接把对应节点加入相应策略组，无需修改规则区。
+
+## macOS 广告过滤
+
+SukkaW 上游明确更推荐将大型广告 / 隐私 / Malware 规则用于 Surge for Mac，而移动平台更适合使用专门的内容过滤工具。因此这份配置使用 Surge 的行级 Requirement，让同一份 Profile 在不同平台自动采用不同策略：
+
+```ini
+#!REQUIREMENT SYSTEM=='macOS' DOMAIN-SET,https://ruleset.skk.moe/List/domainset/reject.conf,REJECT,extended-matching
+#!REQUIREMENT SYSTEM=='macOS' DOMAIN-SET,https://ruleset.skk.moe/List/domainset/reject_extra.conf,REJECT
+#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/non_ip/reject-drop.conf,REJECT-DROP,pre-matching
+#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/non_ip/reject.conf,REJECT,extended-matching
+#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/non_ip/reject-no-drop.conf,REJECT-NO-DROP,extended-matching
+#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/ip/reject.conf,REJECT-DROP
+```
+
+效果：
+
+- Surge for Mac：自动启用基础广告规则、Extra 补充规则及 IP 补充规则。
+- Surge for iOS：上述行自动忽略，不加载大型广告库。
+- 不启用 `reject_phishing`，避免扩大误拦截范围；如果未来确有需求再手动开启。
+- 不启用 `sukka_enhance_adblock`、`MITM Hostnames`、`URL-REGEX` 等 HTTPS 解密 / Rewrite 方案，优先保证银行、支付、AI、流媒体和常用 App 的兼容性。
+
+`#!REQUIREMENT` 建议配合远程 / 托管 Profile 使用。Surge 官方说明通过 UI 修改 Profile 时 Requirement 表达式可能丢失，因此不要在 Surge 图形界面里把这份远程配置另存后长期手工改动；需要修改时直接改仓库文件再更新 Profile。
 
 ## DNS 与 IPv6
 
@@ -54,11 +78,11 @@ hijack-dns = *:53
 
 ```text
 自定义域名 / SYSTEM
-→ DOMAIN-SET（Speedtest / Common CDN / Apple CDN）
-→ non_ip 精准服务（Common CDN / Streaming / AI / Telegram）
+→ DOMAIN-SET（macOS AdBlock / Speedtest / Common CDN / Apple CDN）
+→ non_ip（macOS AdBlock / Common CDN / Streaming / AI / Telegram）
 → non_ip 国内与直连
 → global
-→ IP 精准服务
+→ IP（macOS AdBlock / 精准服务）
 → LAN / domestic / china_ip
 → FINAL
 ```
