@@ -7,13 +7,13 @@
 主配置：
 
 ```text
-https://raw.githubusercontent.com/coutureone/Shadowrocket/master/Surge/Surge-Universal-Split-DNS.conf
+https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Surge/Surge-Universal-Split-DNS.conf
 ```
 
 APNs Direct 模块（可选）：
 
 ```text
-https://raw.githubusercontent.com/coutureone/Shadowrocket/master/Modules/sukka_apns_direct.sgmodule
+https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Modules/sukka_apns_direct.sgmodule
 ```
 
 主配置已经显式将 Apple Push Notification Service 设为 `DIRECT`，同时使用 Surge 内置 `SYSTEM` 规则集，因此**只使用这份主配置时不需要额外启用 APNs 模块**。该模块保留给其他未包含这些规则的 Surge 配置使用。
@@ -24,8 +24,7 @@ https://raw.githubusercontent.com/coutureone/Shadowrocket/master/Modules/sukka_a
 
 - Apple Push Notification Service：`DIRECT`
 - Surge 系统流量：`DIRECT`
-- macOS：额外启用 SukkaW 原生广告 / 隐私 Reject 规则
-- iOS：自动忽略大型广告规则，保持移动端轻量与兼容性
+- iOS / macOS：启用 SukkaW 基础、Extra 和补充广告规则；指定域名支持 URL 拦截
 - Common CDN：`PROXY`（与 `global.conf` 使用相同策略）
 - Apple 中国大陆 CDN：`DIRECT`
 - Apple / Microsoft / 网易云 / 局域网 / 中国大陆常见服务：`DIRECT`
@@ -38,27 +37,15 @@ https://raw.githubusercontent.com/coutureone/Shadowrocket/master/Modules/sukka_a
 
 配置不包含节点。请把自建节点或订阅节点加入 `[Proxy]`，并加入 `PROXY` 策略组。若以后希望 AI、Telegram 或 Streaming 使用不同落地节点，可直接把对应节点加入相应策略组，无需修改规则区。
 
-## macOS 广告过滤
+## iOS / macOS 广告过滤
 
-SukkaW 上游明确更推荐将大型广告 / 隐私 / Malware 规则用于 Surge for Mac，而移动平台更适合使用专门的内容过滤工具。因此这份配置使用 Surge 的行级 Requirement，让同一份 Profile 在不同平台自动采用不同策略：
+两端均启用 Sukka 基础、Extra、non-IP 和 IP 广告规则，直接引用上游链接；URL 广告规则也已加入。
 
-```ini
-#!REQUIREMENT SYSTEM=='macOS' DOMAIN-SET,https://ruleset.skk.moe/List/domainset/reject.conf,REJECT,extended-matching
-#!REQUIREMENT SYSTEM=='macOS' DOMAIN-SET,https://ruleset.skk.moe/List/domainset/reject_extra.conf,REJECT
-#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/non_ip/reject-drop.conf,REJECT-DROP,pre-matching
-#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/non_ip/reject.conf,REJECT,extended-matching
-#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/non_ip/reject-no-drop.conf,REJECT-NO-DROP,extended-matching
-#!REQUIREMENT SYSTEM=='macOS' RULE-SET,https://ruleset.skk.moe/List/ip/reject.conf,REJECT-DROP
-```
+下载或更新主配置即可加载域名和 IP 广告拦截。HTTPS URL 拦截还需要在每台设备的 Surge 中生成、安装并信任本机 CA 证书。证书及私钥不要提交到公共仓库。
 
-效果：
+主配置已经包含 Sukka Reject MITM 的指定域名快照，无需另装同名模块。域名快照需随上游变化维护，规则集本身通过远程链接更新。不启用全域名 MITM。
 
-- Surge for Mac：自动启用基础广告规则、Extra 补充规则及 IP 补充规则。
-- Surge for iOS：上述行自动忽略，不加载大型广告库。
-- 不启用 `reject_phishing`，避免扩大误拦截范围；如果未来确有需求再手动开启。
-- 不启用 `sukka_enhance_adblock`、`MITM Hostnames`、`URL-REGEX` 等 HTTPS 解密 / Rewrite 方案，优先保证银行、支付、AI、流媒体和常用 App 的兼容性。
-
-`#!REQUIREMENT` 建议配合远程 / 托管 Profile 使用。Surge 官方说明通过 UI 修改 Profile 时 Requirement 表达式可能丢失，因此不要在 Surge 图形界面里把这份远程配置另存后长期手工改动；需要修改时直接改仓库文件再更新 Profile。
+这是维护者选择的移动端试用方案：上游更推荐大型广告规则用于 Mac，并指出 MITM / URL 正则存在性能开销。实际耗电和 App 兼容性需要观察；关闭 HTTPS 解密仍可保留域名广告拦截。
 
 ## DNS 与 IPv6
 
@@ -78,11 +65,11 @@ hijack-dns = *:53
 
 ```text
 自定义域名 / SYSTEM
-→ DOMAIN-SET（macOS AdBlock / Speedtest / Common CDN / Apple CDN）
-→ non_ip（macOS AdBlock / Common CDN / Streaming / AI / Telegram）
+→ DOMAIN-SET（AdBlock / Speedtest / Common CDN / Apple CDN）
+→ non_ip（AdBlock / Common CDN / Streaming / AI / Telegram）
 → non_ip 国内与直连
 → global
-→ IP（macOS AdBlock / 精准服务）
+→ IP（AdBlock / 精准服务）
 → LAN / domestic / china_ip
 → FINAL
 ```
