@@ -43,7 +43,13 @@ https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Modules/sukka_a
 
 下载或更新主配置即可加载域名和 IP 广告拦截。HTTPS URL 拦截还需要在每台设备的 Surge 中生成、安装并信任本机 CA 证书。证书及私钥不要提交到公共仓库。
 
-只需导入或更新本仓库的主配置，不需要另装模块。仓库每天读取 Sukka 原始 `sukka_mitm_hostnames.sgmodule`，将其中的 MITM 域名同步进主配置；广告规则继续通过远程规则集链接更新。
+主配置和 MITM 模块分开安装。主配置包含广告规则；HTTPS URL 拦截的域名由独立模块提供。在 Surge「模块 → 从 URL 安装」中输入：
+
+```text
+https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Surge/Modules/sukka_mitm_hostnames.sgmodule
+```
+
+启用 `[Sukka] Surge Reject MITM`。仓库每天同步上游原始模块，手机可通过这个仓库链接更新模块。
 
 手机仍需在 Surge 中开启 HTTPS 解密，并安装、信任设备自己的 CA 证书。配置不含节点或 CA 私钥，也不启用全域名 MITM。
 
