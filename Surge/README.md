@@ -43,13 +43,9 @@ https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Modules/sukka_a
 
 下载或更新主配置即可加载域名和 IP 广告拦截。HTTPS URL 拦截还需要在每台设备的 Surge 中生成、安装并信任本机 CA 证书。证书及私钥不要提交到公共仓库。
 
-HTTPS 解密域名按上游原始方式通过独立模块安装，不复制进主配置。在 Surge「模块」中选择「从 URL 安装」，输入：
+只需导入或更新本仓库的主配置，不需要另装模块。仓库每天读取 Sukka 原始 `sukka_mitm_hostnames.sgmodule`，将其中的 MITM 域名同步进主配置；广告规则继续通过远程规则集链接更新。
 
-```text
-https://ruleset.skk.moe/Modules/sukka_mitm_hostnames.sgmodule
-```
-
-启用 `[Sukka] Surge Reject MITM` 模块，再在设备上开启 HTTPS 解密、安装并信任本机 CA。规则集与模块分别通过各自的上游链接更新。不需要 `MitM All Hostnames` 全域名解密模块。
+手机仍需在 Surge 中开启 HTTPS 解密，并安装、信任设备自己的 CA 证书。配置不含节点或 CA 私钥，也不启用全域名 MITM。
 
 这是维护者选择的移动端试用方案：上游更推荐大型广告规则用于 Mac，并指出 MITM / URL 正则存在性能开销。实际耗电和 App 兼容性需要观察；关闭 HTTPS 解密仍可保留域名广告拦截。
 
