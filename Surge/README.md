@@ -99,3 +99,7 @@ RULE-SET,SYSTEM,DIRECT
 ```
 
 因此 APNs 行为与 `Modules/sukka_apns_direct.sgmodule` 保持一致，不再存在“主配置代理优先、模块直连”的冲突。
+
+## 广告规则下载兼容
+
+IP reject 和 URL regex 规则通过 Sukka 官方构建仓库 `SukkaLab/ruleset.skk.moe` 的 Raw 地址获取，以避开部分网络访问 ruleset.skk.moe 时的 TLS 错误。其余规则继续使用原地址。
