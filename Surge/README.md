@@ -35,7 +35,24 @@ https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Modules/sukka_a
 - 中国大陆 IPv4 / IPv6：`DIRECT`
 - 未匹配流量：`FINAL,PROXY,dns-failed`
 
-配置不包含节点。请把自建节点或订阅节点加入 `[Proxy]`，并加入 `PROXY` 策略组。若以后希望 AI、Telegram 或 Streaming 使用不同落地节点，可直接把对应节点加入相应策略组，无需修改规则区。
+### TUN / 增强模式与无代理节点场景
+
+SukkaW 上游只提供规则分类，并在示例中使用 `[Replace with your policy]` 占位，不规定用户必须采用哪种代理策略。当前配置因此把“规则层”和“出口策略层”分开：
+
+```ini
+PROXY = select, DIRECT, REJECT, include-all-proxies=true
+AI = select, PROXY, DIRECT
+Telegram = select, PROXY, DIRECT
+Streaming = select, PROXY, DIRECT
+```
+
+这样做有三个目的：
+
+1. **Surge TUN / 增强模式可以长期保持开启。** 当暂时没有代理节点、或者不想使用代理时，把 `PROXY` 选择为 `DIRECT`，GitHub 等命中 `global.conf` 的站点不会再因为策略组只有 `REJECT` 而被直接阻断。
+2. `[Proxy]` 中新增的节点会通过 Surge 官方的 `include-all-proxies=true` 自动进入 `PROXY` 组，无需每次再手工编辑策略组。
+3. `REJECT` 仍然保留。需要严格的 fail-close / kill switch 行为时，可以手动将 `PROXY` 切换到 `REJECT`。
+
+配置本身不内置节点。自建节点直接加入 `[Proxy]` 即可自动出现在 `PROXY` 中；如果以后使用外部订阅，可再按 Surge 官方 `policy-path` 方式接入。若希望 AI、Telegram 或 Streaming 使用不同出口，也可继续单独调整对应策略组，不需要改规则区。
 
 ## iOS / macOS 广告过滤
 
@@ -69,7 +86,7 @@ hijack-dns = *:53
 
 ## 规则顺序
 
-本配置严格遵循以下结构：
+本配置严格遵循 SukkaW 上游强调的 `domainset → non_ip → ip` 顺序：
 
 ```text
 自定义域名 / SYSTEM
