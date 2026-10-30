@@ -85,7 +85,7 @@ function convert(sourceText, mode) {
 async function updateOne([sourcePath, outputName, mode, license]) {
   const sourceUrl = `${SOURCE_ORIGIN}/${sourcePath}`;
   const response = await fetch(sourceUrl, {
-    headers: { 'user-agent': 'coutureone-Shadowrocket-converter/1.0' },
+    headers: { 'user-agent': 'xcouturecc-Shadowrocket-converter/1.0' },
     signal: AbortSignal.timeout(30_000)
   });
   if (!response.ok) throw new Error(`${sourceUrl}: HTTP ${response.status}`);

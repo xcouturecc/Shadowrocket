@@ -60,6 +60,13 @@ const providerOrder = new Map();
 for (const profile of profiles) {
   const isClash = profile.endsWith('.yaml');
   const content = await readFile(resolve(root, profile), 'utf8');
+  const ruleUrls = [...content.matchAll(/https:\/\/raw\.githubusercontent\.com\/[^\s,]+/g)]
+    .map(([url]) => url);
+  for (const url of ruleUrls) {
+    if (!url.startsWith('https://raw.githubusercontent.com/xcouturecc/Shadowrocket/master/Shadowrocket/')) {
+      throw new Error(`${profile}: rule URL points outside the maintained repository: ${url}`);
+    }
+  }
   const rules = ruleLines(content, isClash);
   providerOrder.set(profile, providerRules(rules));
   let seenIp = false;
@@ -134,7 +141,8 @@ for (const rule of ruleLines(clash, true)) {
     if (!providers.has(name)) throw new Error(`Unknown Clash provider: ${name}`);
     if (ruleKind(rule) === 'ip') {
       const source = await readFile(resolve(root, 'Shadowrocket/Rules', `${name}.list`), 'utf8');
-      const entries = source.split(/\r?\n/).filter((line) => line.startsWith('IP-'));
+      // MRS conversion intentionally excludes IP-ASN; only CIDRs reach this provider.
+      const entries = source.split(/\r?\n/).filter((line) => /^IP-CIDR6?,/.test(line));
       const noResolveCount = entries.filter((line) => line.endsWith(',no-resolve')).length;
       if (noResolveCount > 0 && noResolveCount < entries.length) {
         throw new Error(`${name}: mixed no-resolve IP rules need separate providers`);

@@ -1,15 +1,16 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/non_ip/ai.conf
-# Source Last Updated: 2026-09-07T15:50:12.497Z
-# Source Content Hash: UbkNDCOcUcEZHDQYCCvK4lj3xKqeSD1W9RqYBdaK5ZU$
+# Source Last Updated: 2026-10-12T11:45:42.734Z
+# Source Content Hash: zEhGllCXs-oKaXAmNQsLUfzQltqnMxOAp-rbeQDnGJw$
 # License: AGPL-3.0
 # Conversion Mode: domain
 # Unsupported or inapplicable entries removed: URL-REGEX=1
-# Rule Count: 50
+# Rule Count: 54
 DOMAIN-SUFFIX,g.ai
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,poe.com
@@ -40,9 +41,11 @@ DOMAIN,jules.google.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN,antigravity.google
+DOMAIN,server.codeium.com
 DOMAIN,aida.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,generativeai.google
+DOMAIN,inference.codeium.com
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN,antigravity-unleash.goog
@@ -50,6 +53,7 @@ DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN,gateway.ai.cloudflare.com
 DOMAIN,aisandbox-pa.googleapis.com
 DOMAIN-SUFFIX,cloudcode-pa.googleapis.com
+DOMAIN,server.self-serve.windsurf.com
 DOMAIN,robinfrontend-pa.googleapis.com
 DOMAIN,alkalicore-pa.clients6.google.com
 DOMAIN,daily-cloudcode-pa.googleapis.com

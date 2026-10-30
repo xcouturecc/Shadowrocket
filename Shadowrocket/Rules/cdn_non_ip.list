@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/non_ip/cdn.conf
-# Source Last Updated: 2026-08-19T01:29:53.827Z
-# Source Content Hash: XSnANR2ej23eV7GFbIL1wqIzrZ_522OY7Ubzre7S8X4$
+# Source Last Updated: 2026-10-23T06:28:09.042Z
+# Source Content Hash: 2-A-ua7q9c1-wq44SGiChuwVtDSUsjXRsN7wZJVQiU4$
 # License: AGPL-3.0
 # Conversion Mode: domain
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 83
+# Rule Count: 85
 DOMAIN,cdn-msp.jmcomic.me
 DOMAIN,cdn-msp.18comic.org
 DOMAIN,cdn-msp.18comic.vip
@@ -90,3 +90,5 @@ DOMAIN-WILDCARD,fastly-*.allmovie.com
 DOMAIN-WILDCARD,cdn*.porn87.com
 DOMAIN-WILDCARD,cdn*.pornhost.com
 DOMAIN-WILDCARD,cdn*.boysfood.com
+DOMAIN-WILDCARD,rum-ingest.*.signalfx.com
+DOMAIN-WILDCARD,cf-images.*.prod.boltdns.net
