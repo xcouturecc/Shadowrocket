@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   update:
-    if: github.repository == 'coutureone/Shadowrocket'
+    if: github.repository == 'xcouturecc/Shadowrocket'
     runs-on: ubuntu-latest
     timeout-minutes: 15
 

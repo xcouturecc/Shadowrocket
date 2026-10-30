@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/domainset/download.conf
-# Source Last Updated: 2026-09-30T06:20:11.062Z
-# Source Content Hash: -NesAi5gYz1KmZm9nEzHrd6NUOvwswpIJXANB78WEvA$
+# Source Last Updated: 2026-10-25T14:53:23.056Z
+# Source Content Hash: ZUTLv19fYjIbRKecMbSBKVoXiw6SytQGyuwNWuDt1yY$
 # License: AGPL-3.0
 # Conversion Mode: domainset
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 1970
+# Rule Count: 1968
 .gcr.io
 ghp.ci
 .k8s.io
@@ -138,7 +138,6 @@ ftp5.gwdg.de
 gotest.tools
 lib.ugent.be
 mir.linux.kg
-mirror.0x.sg
 mirror.5i.fi
 mirror.a1.mk
 .mirror.ac.ke
@@ -835,7 +834,6 @@ mirror.isoc.org.il
 mirror.karneval.cz
 mirror.katapult.io
 mirror.liquidrp.de
-mirror.marcusn.net
 mirror.papua.go.id
 mirror.previder.nl
 mirror.reverse.net
@@ -1021,7 +1019,9 @@ mirrors.xtom.com.hk
 opensource.xtdv.net
 packages.termux.dev
 pubmirror.plutex.de
+registry.gitlab.com
 release.runcloud.io
+releases.claude.com
 replicate.npmjs.com
 repo.extreme-ix.org
 .s3-website.cloud.ru
@@ -1282,7 +1282,6 @@ downloads.majestic.com
 downloads.portainer.io
 enterprise.proxmox.com
 fdroid.tetaneutral.net
-ftp.tsukuba.wide.ad.jp
 ftpmirror1.infania.net
 gog-cdn-fastly.gog.com
 i18n.prismlauncher.org
@@ -1352,7 +1351,6 @@ vfat.classicreload.com
 vn-mirrors.techhost.vn
 .wup.eshop.nintendo.net
 www.gutscheinrausch.de
-www2.aomeisoftware.com
 apache.ip-connect.vn.ua
 apache.miloslavbrada.cz
 archive.raspberrypi.com
