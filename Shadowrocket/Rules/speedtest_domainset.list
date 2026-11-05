@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/domainset/speedtest.conf
-# Source Last Updated: 2026-11-03T22:16:56.281Z
-# Source Content Hash: fHLF6jxKhSQ699K8afO5cxRAl4oHMw3n580GloxLOCc$
+# Source Last Updated: 2026-11-04T22:36:37.723Z
+# Source Content Hash: L845Tf_mYIEpIR8K6xqWfWRCq9-dFFV2dQsztwSOK2g$
 # License: AGPL-3.0
 # Conversion Mode: domainset
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 3467
+# Rule Count: 3469
 .fast.com
 fastme.ir
 .nperf.net
@@ -842,6 +842,7 @@ dallas1.cabospeed.com
 duncan1.cabospeed.com
 ellsworth.from-ks.com
 fibertest.soipl.co.in
+fra-de-008.xvperf.net
 guwahati.neconnect.in
 hiztesti.codit.com.tr
 hiztesti.turbo.net.tr
@@ -1651,6 +1652,7 @@ ookla.me1.neptune.net.au
 ookla.radishnetworks.net
 ookla.sy1.neptune.net.au
 ookla1.ccspublichost.com
+ooklaspdtstsvr.zitel.com
 reflector.aberythmic.com
 riorancho1.cabospeed.com
 seacaftest.aptalaska.net
