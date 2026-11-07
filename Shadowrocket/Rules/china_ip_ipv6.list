@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/ip/china_ip_ipv6.conf
-# Source Last Updated: 2026-11-05T13:13:57.602Z
-# Source Content Hash: TXjNwz8FdZydjU3b9YEIw-LJ9aeqmh0hmrJN1dW3gzQ$
+# Source Last Updated: 2026-11-06T12:58:38.531Z
+# Source Content Hash: 6bi7n4_fsypJurNiRi5ujpYPgSOEA0D_nB-aqg_HLM0$
 # License: CC-BY-SA-2.0
 # Conversion Mode: ip
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 3434
+# Rule Count: 3432
 IP-CIDR6,2001:250::/30
 IP-CIDR6,2001:254::/33
 IP-CIDR6,2001:255::/32
@@ -1246,7 +1246,7 @@ IP-CIDR6,2403:62c0::/32
 IP-CIDR6,2403:6380::/44
 IP-CIDR6,2403:6380:20::/44
 IP-CIDR6,2403:6380:33::/48
-IP-CIDR6,2403:6380:36::/47
+IP-CIDR6,2403:6380:37::/48
 IP-CIDR6,2403:6380:38::/45
 IP-CIDR6,2403:6380:41::/48
 IP-CIDR6,2403:6380:44::/46
@@ -2300,9 +2300,7 @@ IP-CIDR6,2406:840:e0ce::/48
 IP-CIDR6,2406:840:e0d0::/44
 IP-CIDR6,2406:840:e0e4::/48
 IP-CIDR6,2406:840:e0e6::/47
-IP-CIDR6,2406:840:e0e9::/48
-IP-CIDR6,2406:840:e0ea::/47
-IP-CIDR6,2406:840:e0ec::/46
+IP-CIDR6,2406:840:e0e8::/45
 IP-CIDR6,2406:840:e0f0::/44
 IP-CIDR6,2406:840:e100::/45
 IP-CIDR6,2406:840:e108::/46
