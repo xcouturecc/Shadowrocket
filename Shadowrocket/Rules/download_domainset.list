@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/domainset/download.conf
-# Source Last Updated: 2026-10-25T14:53:23.056Z
-# Source Content Hash: ZUTLv19fYjIbRKecMbSBKVoXiw6SytQGyuwNWuDt1yY$
+# Source Last Updated: 2026-11-10T07:17:12.870Z
+# Source Content Hash: vgo06LZrpuIQoCMBVBECTwXKLTTqn869-eDRbGrF_3w$
 # License: AGPL-3.0
 # Conversion Mode: domainset
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 1968
+# Rule Count: 1969
 .gcr.io
 ghp.ci
 .k8s.io
@@ -352,6 +352,7 @@ apache.saix.net
 apache.uvigo.es
 apt.izzysoft.de
 c.1password.com
+cdn.altstore.io
 cpan.stu.edu.tw
 cpan.webdesk.ru
 ctan.ebinger.cc
