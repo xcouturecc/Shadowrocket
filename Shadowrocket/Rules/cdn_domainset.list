@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/domainset/cdn.conf
-# Source Last Updated: 2026-11-04T07:38:37.836Z
-# Source Content Hash: zHgbe8SbC0XuR0EziCDdBH6hDSyOLlW2DlalLF6VtnQ$
+# Source Last Updated: 2026-11-13T08:54:24.339Z
+# Source Content Hash: g4FAOGMkSsw7Mw0-Na8lvH6ZbtTLhAcCfVZhhFUtS4U$
 # License: AGPL-3.0
 # Conversion Mode: domainset
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 4698
+# Rule Count: 4700
 0x0.st
 eep.io
 .esm.sh
@@ -2695,6 +2695,7 @@ preview.anysex.com
 previews.123rf.com
 proxy.spigotmc.org
 public.hare200.com
+public.popclip.app
 .quip-marketing.com
 r2cdn.corespeed.io
 reader.readmoo.com
@@ -3265,6 +3266,7 @@ imgproxy.flathub.org
 instafeed.nfcube.com
 .ipfs.genenetwork.org
 .ipfs.scalaproject.io
+iprsoftwaremedia.com
 jac.yahoosandbox.com
 js.verygoodvault.com
 jsmodule.svc.litv.tv
