@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/non_ip/ai.conf
-# Source Last Updated: 2026-10-12T11:45:42.734Z
-# Source Content Hash: zEhGllCXs-oKaXAmNQsLUfzQltqnMxOAp-rbeQDnGJw$
+# Source Last Updated: 2026-11-15T15:00:49.984Z
+# Source Content Hash: llsbptQtp1iJSCMX20oO9ODcbilrqWqquo6yCLsMh3s$
 # License: AGPL-3.0
 # Conversion Mode: domain
 # Unsupported or inapplicable entries removed: URL-REGEX=1
-# Rule Count: 54
+# Rule Count: 57
 DOMAIN-SUFFIX,g.ai
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,ai.com
@@ -29,6 +29,7 @@ DOMAIN-SUFFIX,chatgpt.site
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN,ai.google.dev
 DOMAIN-SUFFIX,anthropic.com
+DOMAIN,cloud.zed.dev
 DOMAIN-SUFFIX,gemini.google
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN,openrouter.ai
@@ -45,6 +46,7 @@ DOMAIN,server.codeium.com
 DOMAIN,aida.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,generativeai.google
+DOMAIN,aicode.googleapis.com
 DOMAIN,inference.codeium.com
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,notebooklm.google.com
@@ -59,5 +61,6 @@ DOMAIN,alkalicore-pa.clients6.google.com
 DOMAIN,daily-cloudcode-pa.googleapis.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
 DOMAIN-KEYWORD,openai
 DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
