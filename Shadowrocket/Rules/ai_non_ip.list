@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/non_ip/ai.conf
-# Source Last Updated: 2026-11-15T15:00:49.984Z
-# Source Content Hash: llsbptQtp1iJSCMX20oO9ODcbilrqWqquo6yCLsMh3s$
+# Source Last Updated: 2026-11-19T07:34:43.743Z
+# Source Content Hash: WONf5QeSShPic26ybLLfmimv7sDc-Nnvmgfi59b6wI0$
 # License: AGPL-3.0
 # Conversion Mode: domain
 # Unsupported or inapplicable entries removed: URL-REGEX=1
-# Rule Count: 57
+# Rule Count: 59
 DOMAIN-SUFFIX,g.ai
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,ai.com
@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,openart.ai
 DOMAIN-SUFFIX,chatgpt.com
+DOMAIN,claude.site
 DOMAIN-SUFFIX,clipdrop.co
 DOMAIN-SUFFIX,chatgpt.site
 DOMAIN-SUFFIX,deepmind.com
@@ -55,6 +56,7 @@ DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN,gateway.ai.cloudflare.com
 DOMAIN,aisandbox-pa.googleapis.com
 DOMAIN-SUFFIX,cloudcode-pa.googleapis.com
+DOMAIN,bridge.claudeusercontent.com
 DOMAIN,server.self-serve.windsurf.com
 DOMAIN,robinfrontend-pa.googleapis.com
 DOMAIN,alkalicore-pa.clients6.google.com
