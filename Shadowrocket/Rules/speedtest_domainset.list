@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/domainset/speedtest.conf
-# Source Last Updated: 2026-11-21T22:09:52.063Z
-# Source Content Hash: dXuE-X93KgFLej15ZrFLXABZaZWrYsH59ar6rnjy0XM$
+# Source Last Updated: 2026-11-22T22:27:35.722Z
+# Source Content Hash: yMCo9KhzdognHF_-vQ0RG4C98xnUpVFEk5yOh3FzRtY$
 # License: AGPL-3.0
 # Conversion Mode: domainset
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 3503
+# Rule Count: 3504
 .fast.com
 fastme.ir
 .nperf.net
@@ -2705,6 +2705,7 @@ edgemark-lax.cust.edgemark.io
 exc-speedtest.unitedfiber.com
 ga-speedtest.liveoakfiber.com
 ksc11-speedtest01.as15108.com
+librespeed-dtw.rackgenius.com
 librespeed.lukas-heinrich.com
 lnk11-speedtest01.as15108.com
 lsv11-speedtest01.as15108.com
