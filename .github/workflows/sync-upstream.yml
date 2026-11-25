@@ -43,7 +43,32 @@ jobs:
           # can push repository content, but GitHub rejects pushes that modify
           # workflow files without the separate workflows permission.
           fork_head="$(git rev-parse HEAD)"
-          git merge --no-commit --no-ff upstream/master
+          if ! git merge --no-commit --no-ff upstream/master; then
+            # A content conflict is recoverable only if Git started a merge.
+            if ! git rev-parse -q --verify MERGE_HEAD >/dev/null; then
+              echo "::error::Upstream merge could not start."
+              exit 1
+            fi
+          fi
+
+          # Resolve all workflow-only conflicts in favor of the fork,
+          # including upstream-added or removed workflow files.
           git restore --source="$fork_head" --staged --worktree -- .github/workflows
+
+          # Never automatically resolve conflicts in rules or other files.
+          if [ -n "$(git ls-files -u)" ]; then
+            echo "::error::Non-workflow merge conflicts require manual review."
+            git diff --name-only --diff-filter=U
+            git merge --abort
+            exit 1
+          fi
+
+          # Ensure no workflow changes can be included in the push.
+          if ! git diff --cached --quiet "$fork_head" -- .github/workflows; then
+            echo "::error::Unexpected workflow changes."
+            git merge --abort
+            exit 1
+          fi
+
           git commit --no-edit
           git push origin master
