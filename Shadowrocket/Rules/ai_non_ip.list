@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/non_ip/ai.conf
-# Source Last Updated: 2026-11-19T07:34:43.743Z
-# Source Content Hash: WONf5QeSShPic26ybLLfmimv7sDc-Nnvmgfi59b6wI0$
+# Source Last Updated: 2026-11-27T12:05:49.767Z
+# Source Content Hash: dSlXwZsjF_o_jUAVY7S9A5LLP6WA4pRLpY4_HYD3qlY$
 # License: AGPL-3.0
 # Conversion Mode: domain
 # Unsupported or inapplicable entries removed: URL-REGEX=1
-# Rule Count: 59
+# Rule Count: 58
 DOMAIN-SUFFIX,g.ai
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,ai.com
@@ -48,7 +48,6 @@ DOMAIN,aida.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN,aicode.googleapis.com
-DOMAIN,inference.codeium.com
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN,antigravity-unleash.goog

@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/ip/china_ip.conf
-# Source Last Updated: 2026-11-26T08:43:16.367Z
-# Source Content Hash: hRrD_IIg6xuxEw6iDDddEebRvVmVSzN_FCrUcQERJ_g$
+# Source Last Updated: 2026-11-27T11:53:29.821Z
+# Source Content Hash: eivtSrosJPLzZaPk8Z0eCKyRXQqxu0X5OpNRRuiq8uk$
 # License: CC-BY-SA-2.0
 # Conversion Mode: ip
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 3887
+# Rule Count: 3888
 IP-CIDR,1.1.8.0/24
 IP-CIDR,1.2.4.0/24
 IP-CIDR,1.8.1.0/24
@@ -2694,6 +2694,7 @@ IP-CIDR,162.14.0.0/16
 IP-CIDR,162.105.0.0/16
 IP-CIDR,163.0.0.0/16
 IP-CIDR,163.47.4.0/22
+IP-CIDR,163.52.28.0/23
 IP-CIDR,163.53.44.0/23
 IP-CIDR,163.53.60.0/22
 IP-CIDR,163.53.88.0/21
@@ -2790,7 +2791,6 @@ IP-CIDR,180.178.248.0/21
 IP-CIDR,180.184.0.0/23
 IP-CIDR,180.184.2.0/24
 IP-CIDR,180.184.6.0/23
-IP-CIDR,180.184.8.0/23
 IP-CIDR,180.184.14.0/24
 IP-CIDR,180.184.24.0/21
 IP-CIDR,180.184.32.0/19
@@ -3231,6 +3231,7 @@ IP-CIDR,203.152.64.0/19
 IP-CIDR,203.156.192.0/18
 IP-CIDR,203.160.129.0/24
 IP-CIDR,203.160.192.0/19
+IP-CIDR,203.162.166.0/23
 IP-CIDR,203.166.160.0/22
 IP-CIDR,203.166.165.0/24
 IP-CIDR,203.166.166.0/24
