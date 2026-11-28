@@ -1,12 +1,12 @@
 # AUTO-GENERATED FILE. DO NOT EDIT.
 # Converted for Shadowrocket from Sukka Ruleset.
 # Source: https://ruleset.skk.moe/List/domainset/download.conf
-# Source Last Updated: 2026-11-27T12:05:50.058Z
-# Source Content Hash: c3Bz5Ki1DGPysYRdE6nnNhUgBJpMBYURB3va5UOvB-w$
+# Source Last Updated: 2026-11-28T10:10:52.699Z
+# Source Content Hash: 0JD2_ZMip6fU_HUu8Lz99OPLNRhajY_dSGJGB_g2mBw$
 # License: AGPL-3.0
 # Conversion Mode: domainset
 # Unsupported or inapplicable entries removed: none
-# Rule Count: 1964
+# Rule Count: 1968
 .gcr.io
 ghp.ci
 .k8s.io
@@ -226,6 +226,7 @@ mirrors.up.pt
 repo.xtom.com
 repository.su
 .s3.yandex.net
+.sbcmirror.org
 sft.if.usp.br
 ubuntu.dts.mg
 ubuntu.nic.cz
@@ -349,6 +350,7 @@ apache.hippo.nl
 apache.is.co.za
 apache.saix.net
 apache.uvigo.es
+apt.armbian.com
 apt.izzysoft.de
 c.1password.com
 cdn.altstore.io
@@ -471,6 +473,7 @@ archlinux.nic.cz
 .artifacts.ui.com
 aus5.mozilla.org
 b2.mcarchive.net
+beta.armbian.com
 boot.netboot.xyz
 cdimage.kali.org
 .cdn.blizzard.com
@@ -803,6 +806,7 @@ ftp.tu-chemnitz.de
 .ftp2.de.debian.org
 ftpmirror.your.org
 ftpserv.tudelft.nl
+github.armbian.com
 index.rubygems.org
 maven.fabricmc.net
 maven.is-quite.gay
